@@ -1,14 +1,16 @@
 import React from "react";
 import { StyledProduct } from "./ProductCardStyle";
+import productList from "../../../assents/productList";
 
-export default function ProductCard(){
+export default function ProductCard({productList}){
     return(
         <>
         <StyledProduct>
-        <img></img>
+        <img src="https://picsum.photos/300/335?a="/>
         <div>
-        <p>Nome do Produto</p>
-        <p>Valor</p>
+        <p>{productList.name}</p>
+        <p>{productList.value}</p>
+        
         <button>Adicionar ao Carrinho</button>
         </div>
         </StyledProduct>
