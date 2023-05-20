@@ -9,6 +9,11 @@ import productList from './assents/productList'
 
 function App() {
   const [orderFilter, setOrderFilter] = useState("");
+  const [minFilter, setMinFilter] = useState("");
+  const [maxFilter, setMaxFilter] = useState("");
+  const [searchFilter, setSearchFilter] = useState("");
+  const [cart, setCart] = useState("");
+  const [amount, setAmount] = useState("");
   return (
     <>
     <GlobalStyles/>
