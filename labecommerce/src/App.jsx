@@ -12,18 +12,38 @@ function App() {
   const [minFilter, setMinFilter] = useState("");
   const [maxFilter, setMaxFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
-  const [cart, setCart] = useState("");
-  const [amount, setAmount] = useState("");
+  const [cart, setCart] = useState([]);
+  const [amount, setAmount] = useState([]);
   return (
     <>
     <GlobalStyles/>
     <AppStyled>
-      <Filter />
+      <Filter
+      minFilter={minFilter}
+      setMinFilter={setMinFilter}
+      maxFilter={maxFilter}
+      setMaxFilter={setMaxFilter}
+      searchFilter={searchFilter}
+      setSearchFilter={setSearchFilter}
+      />
       <Home 
         productList={productList}
         orderFilter={orderFilter}
-        setOrderFilter={setOrderFilter}/>
-      <Cart />
+        setOrderFilter={setOrderFilter}
+        cart={cart}
+        setCart={setCart}
+        amount={amount}
+        setAmount={setAmount}
+        minFilter={minFilter}
+        maxFilter={maxFilter}
+        searchFilter={searchFilter}
+        />
+      <Cart
+      cart={cart}
+      setCart={setCart}
+      amount={amount}
+      setAmount={setAmount} 
+      />
     </AppStyled>
   </>
   );
