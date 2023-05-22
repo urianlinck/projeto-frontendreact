@@ -1,7 +1,7 @@
 import React from "react";
 import ProductCard from "../ProductCard/ProductCard";
 import { HomeStyled } from "./HomeStyle";
-export default function Home({productList, orderFilter, setOrderFilter}){
+export default function Home({productList, orderFilter, setOrderFilter, cart, setCart, amount, setAmount, minFilter, maxFilter, searchFilter}){
 
     const handleOrderSearch = (e) => {
         setOrderFilter(e.target.value);
@@ -21,8 +21,17 @@ export default function Home({productList, orderFilter, setOrderFilter}){
         </select>
         </div>
         <div className="cartao">
-        {productList.sort((a, b) => {
-            console.log(orderFilter);
+        {productList
+        .filter((valorMinimo) => {
+          return minFilter ? valorMinimo.value >= minFilter : productList
+        })
+        .filter((valorMaximo) => {
+          return maxFilter ? valorMaximo.value <= maxFilter : productList
+        })
+        .filter((busca) => {
+          return busca.name.toLowerCase().includes(searchFilter.toLowerCase());
+        })
+        .sort((a, b) => {;
             if (orderFilter === "c") {
               return a.name >= b.name ? 1 : -1;
             } else if (orderFilter === "d") {
@@ -31,7 +40,7 @@ export default function Home({productList, orderFilter, setOrderFilter}){
               return a.value >= b.value ? 1: -1;
             } else if (orderFilter === "f") {
               return a.value <= b.value ? 1: -1;
-            }
+            } return productList;
           })
           .map((productList) => {
             return (
