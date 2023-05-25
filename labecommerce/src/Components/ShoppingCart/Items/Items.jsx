@@ -1,11 +1,17 @@
 import React from "react";
+import blackhole from "../../../assets/blackhole.png"
+import { StyledItems } from "./ItemsStyle";
 
-export default function Items(){
+export default function Items({name, value, quantity, removeItem, id}){
     return(
         <>
-        <p>Nome do produto</p>
-        <button>Remover</button>
-        <p>Valor total:</p>
-        </>
+        <StyledItems>
+        <p>{quantity}x {name}</p>
+        <div>
+        <p>R${value.toFixed(2)}</p>
+        <button onClick={()=>removeItem(id)}> <img src={blackhole} title="Remover"/> </button>
+        </div>
+        </StyledItems>
+        </> 
     )
 }

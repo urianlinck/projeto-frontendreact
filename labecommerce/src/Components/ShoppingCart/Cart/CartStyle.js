@@ -9,4 +9,5 @@ export const CartStyled = styled.div`
     padding: 20px;
     gap: 10px;
     height: fit-content;
+    
 `
