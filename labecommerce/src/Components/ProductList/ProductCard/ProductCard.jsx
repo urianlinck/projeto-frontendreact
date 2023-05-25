@@ -1,17 +1,21 @@
 import React from "react";
 import { StyledProduct } from "./ProductCardStyle";
-import productList from "../../../assents/productList";
+import rocket from "../../../assets/rocket.png"
 
-export default function ProductCard({productList}){
+export default function ProductCard({addToCart, product}){
+    
+
     return(
         <>
         <StyledProduct>
-        <img src="https://picsum.photos/300/335?a="/>
+        <img src={product.imageUrl}/>
         <div>
-        <p>{productList.name}</p>
-        <p>{productList.value}</p>
+        <p>{product.name}</p>
+        <div className="sidebutton">
+        <p>R${product.value}</p>
         
-        <button>Adicionar ao Carrinho</button>
+        <button onClick={()=>addToCart(product)}> <img src={rocket} title="Adicionar o carrinho"/> </button>
+        </div>
         </div>
         </StyledProduct>
         </>

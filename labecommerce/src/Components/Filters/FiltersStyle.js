@@ -11,4 +11,8 @@ export const StyledFilters = styled.div`
     padding: 20px;
     gap: 10px;
     height: fit-content;
+
+    input{
+        border-color: aliceblue;
+    }
 `

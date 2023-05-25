@@ -13,7 +13,25 @@ function App() {
   const [maxFilter, setMaxFilter] = useState("");
   const [searchFilter, setSearchFilter] = useState("");
   const [cart, setCart] = useState([]);
-  const [amount, setAmount] = useState([]);
+  const [amount, setAmount] = useState(0);
+
+  const addToCart = (productAdd) => { 
+    const addedProduct = cart.find((product)=>product.id === productAdd.id)
+    if(addedProduct === undefined){
+      productAdd = {...productAdd, quantity:1}
+      setCart([...cart, productAdd])
+    }else{
+      const newCart = cart.map((product)=>{
+        if(product.id === productAdd.id){
+          return {...addedProduct, quantity: addedProduct.quantity+1}
+        }else{
+          return product
+        }
+      })
+      setCart(newCart)
+    }
+}
+console.log("cart", cart)
   return (
     <>
     <GlobalStyles/>
@@ -37,6 +55,7 @@ function App() {
         minFilter={minFilter}
         maxFilter={maxFilter}
         searchFilter={searchFilter}
+        addToCart={addToCart}
         />
       <Cart
       cart={cart}
