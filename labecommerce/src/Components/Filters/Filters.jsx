@@ -16,7 +16,7 @@ export default function Filter({minFilter, setMinFilter, maxFilter, setMaxFilter
     return(
         <>
         <StyledFilters>
-        <h2>Filters</h2>
+        <h2>Filtros</h2>
         <label id="minimo">Valor Mínimo:</label>
         <input type="number" id="minimo" name="minimo" onChange={handleMinFilter}value={minFilter}></input>
         <label id="maximo">Valor Máximo:</label>
