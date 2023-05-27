@@ -5,20 +5,29 @@ export const HomeStyled = styled.div`
     grid-column: 3/9;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 5%, 95%;
-    border: 2px solid black;
-    padding: 30px;
+    /* border: 2px solid goldenrod; */
+    border-radius: 0.5rem;
+    padding: 5px;
     gap: 10px;
-    background-image: url(https://e0.pxfuel.com/wallpapers/224/35/desktop-wallpaper-purple-space-roxo.jpg);
+    background: transparent;
+    h1{
+        background: transparent;
+    }
     .header{
         display: flex;
         width: 100%;
         grid-column: 1/4;
         justify-content: space-between;
+        background: transparent;
 
         select{
-            background-color: purple;
+            background: transparent;
             border-radius: 0.5rem;
             border: 2px solid goldenrod;
+            option{
+                background-color: navy;
+
+            }
         }
     }
    .cartao{
@@ -28,7 +37,7 @@ export const HomeStyled = styled.div`
         justify-content: space-around;
         grid-column: 1/4;
         grid-row: 2/3;
-        background-image: url(https://e0.pxfuel.com/wallpapers/224/35/desktop-wallpaper-purple-space-roxo.jpg);
+        background: transparent;
     }
     
 `

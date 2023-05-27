@@ -7,12 +7,18 @@ export const StyledFilters = styled.div`
     position: sticky;
     top: 0px;
     flex-direction: column;
-    border: 2px solid black;
+    border: 2px solid goldenrod;
+    border-radius: 0.5rem;
     padding: 20px;
     gap: 10px;
     height: fit-content;
-
+    background: transparent;
     input{
         border-color: aliceblue;
+        background: transparent;
+        border-radius: 0.5rem;;
+    }
+    h2, label{
+        background: transparent;
     }
 `
