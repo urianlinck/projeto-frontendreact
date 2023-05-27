@@ -16,6 +16,7 @@ export const StyledProduct=styled.div`
         object-fit: cover;
         background: transparent;
     }
+    
     div{
         width: 100%;
         border-radius: 10px;
@@ -40,7 +41,7 @@ export const StyledProduct=styled.div`
         height: 50px;
         width: 50px;
         transform: translateX(-50%);
-        background-color: purple;
+        border-color: goldenrod;
         border-radius: 10px;
         background: transparent;
         img{

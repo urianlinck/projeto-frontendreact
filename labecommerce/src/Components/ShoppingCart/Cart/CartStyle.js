@@ -5,7 +5,6 @@ export const CartStyled = styled.div`
     grid-column: 9/11;
     position: sticky;
     top: 0px;
-    border: 2px solid goldenrod;
     border-radius: 0.5rem;
     padding: 20px;
     gap: 10px;
@@ -24,6 +23,7 @@ export const CartStyled = styled.div`
         height: 50px;
         width: 130px;
         border-radius: 10px;
+        border-color: goldenrod;
         background: transparent;
         img{
             width: 50px;
