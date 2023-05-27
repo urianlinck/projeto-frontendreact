@@ -31,7 +31,7 @@ function App() {
       setCart(newCart)
     }
 }
-console.log("cart", cart)
+
   return (
     <>
     <GlobalStyles/>

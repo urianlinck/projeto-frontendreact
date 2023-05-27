@@ -8,7 +8,7 @@ export default function Items({name, value, quantity, removeItem, id}){
         <StyledItems>
         <p>{quantity}x {name}</p>
         <div>
-        <p>R${value.toFixed(2)}</p>
+        <p>{value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
         <button onClick={()=>removeItem(id)}> <img src={blackhole} title="Remover"/> </button>
         </div>
         </StyledItems>

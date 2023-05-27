@@ -42,6 +42,7 @@ export default function Home({addToCart,productList, orderFilter, setOrderFilter
         <>
         <HomeStyled> 
         <div className="header">
+        <h1>Tesouros do Espaço</h1> 
         <h4>Quantidade de produtos: {result.length}</h4>
         <select onChange={handleOrderSearch} value={orderFilter}>
         <option value="">Ordenar</option>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Items from "../Items/Items"
 import { CartStyled } from "./CartStyle";
 import { render } from "@testing-library/react";
+import gems from "../../../assets/gems.png"
 
 export default function Cart({ productList, cart, setCart, amount, setAmount}){
 
@@ -14,9 +15,9 @@ export default function Cart({ productList, cart, setCart, amount, setAmount}){
             if(product.quantity === 0){
                 const newCart = cart.filter(productRemoved => productRemoved.quantity !== 0)
                 setCart(newCart)
-            }
-            if(cart.length === 1){
-                localStorage.removeItem("cartKey")
+                if(cart.length === 1){
+                    localStorage.removeItem("cartKey")
+                }
             }
             
         })
@@ -58,10 +59,13 @@ export default function Cart({ productList, cart, setCart, amount, setAmount}){
     return(
         <>
         <CartStyled>
-        <h2>Cart</h2>
+        <h2>Carrinho</h2>
         {renderItemsOnCart}
         <br/>
-        <p> Total: R${amount.toFixed(2)}</p>
+        <p> Total: {amount.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
+        <buyButton>
+        <button onClick={()=>{ alert('Essa função ainda não está pronta. Retorne em alguns meses.'); }}>Comprar <img src={gems}/></button>
+        </buyButton>
         </CartStyled>
         </>
     )
